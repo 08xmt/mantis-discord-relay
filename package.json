@@ -1,0 +1,30 @@
+{
+  "name": "mantis-discord-relay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Thin Discord relay for Mantis Triage: threads, slash-command previews, and a signed HTTP API. Holds no Mantis token.",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run && python3 -m unittest discover -s triage -t triage -p 'test_*.py'",
+    "typecheck": "tsc --noEmit -p tsconfig.test.json",
+    "backup": "tsx src/cli/backup.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "discord.js": "^14.23.2",
+    "fastify": "^5.6.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.18.8",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
